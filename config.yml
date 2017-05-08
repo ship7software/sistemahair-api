@@ -1,0 +1,16 @@
+default:
+  server:
+    port: 4000
+  mongo:
+    url: mongodb://root:1234@ds131621.mlab.com:31621/sistemahair-dev
+  secret: hairisthesecret
+development:
+
+stage:
+
+test:
+  server:
+    port: 4001
+  mongo:
+    url: mongodb://root:1234@ds133221.mlab.com:33221/sistemahair-test
+production:

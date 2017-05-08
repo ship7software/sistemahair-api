@@ -1,0 +1,44 @@
+[
+  {
+    "descricao": "CORTE MASCULINO",
+    "preco": 30,
+    "duracaoPadrao": 15,
+    "comissao": 0
+  },
+  {
+    "descricao": "CORTE FEMININO",
+    "preco": 100,
+    "duracaoPadrao": 30,
+    "comissao": 0
+  },
+  {
+    "descricao": "ESCOVA",
+    "preco": 150,
+    "duracaoPadrao": 45,
+    "comissao": 0
+  },
+  {
+    "descricao": "MANICURE",
+    "preco": 25,
+    "duracaoPadrao": 30,
+    "comissao": 0
+  },
+  {
+    "descricao": "PEDICURE",
+    "preco": 25,
+    "duracaoPadrao": 30,
+    "comissao": 0
+  },
+  {
+    "descricao": "RELAXAMENTO",
+    "preco": 180,
+    "duracaoPadrao": 90,
+    "comissao": 0
+  },
+  {
+    "descricao": "PINTURA",
+    "preco": 170,
+    "duracaoPadrao": 60,
+    "comissao": 0
+  }
+]

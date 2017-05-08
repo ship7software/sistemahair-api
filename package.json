@@ -1,0 +1,45 @@
+{
+  "name": "sistemahair-api",
+  "version": "0.0.0",
+  "description": "API dos sites Sistema HAIR",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "mocha test/run.js --timeout 100000",
+    "coverage": "istanbul cover node_modules/.bin/_mocha test/run.js --timeout 100000"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "author": "hermogenes <ferreira.hermogenes@gmail.com>",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "helmet": "^3.1.0",
+    "install": "^0.8.7",
+    "jsonwebtoken": "^7.2.1",
+    "lodash": "^4.17.4",
+    "mailgun-js": "^0.8.2",
+    "mongoose": "^4.8.0",
+    "morgan": "^1.7.0",
+    "mustache": "^2.3.0",
+    "node-yaml-config": "0.0.4",
+    "npm": "^4.1.2",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0"
+  }
+}

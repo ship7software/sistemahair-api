@@ -1,0 +1,404 @@
+[
+  {
+    "descricao": "INOAR - ARGAN SYSTEM SHAMPOO DE TRATAMENTO - 1000ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS - SHAMPOO DESMAIA CABELO - 500ML",
+    "preco": 109.9,
+    "custo": 87.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS BANHO DE VERNIZ SHAMPOO - 500ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "YENZAH SOU+CACHOS SHAMPOO SEM SULFATO LOW POO - 240ML",
+    "preco": 46.3,
+    "custo": 37.04,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS - FORCE REPAIR SHAMPOO REPARADOR - 1LITRO",
+    "preco": 58.9,
+    "custo": 47.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - SHAMPOO VOLUMÃO - 230ML",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "MAGIC COLOR PLATINUM BLOND SHAMPOO MATIZADOR 3D - 500ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "YENZAH YELLOW OFF SHAMPOO DESAMARELADOR - 200ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "YENZAH OM SHAMPOO ÓLEO DE ARGAN 1000ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XMIX SHAMPOO REGENERADOR CAPILAR QUIABO - 250ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS CACHOS SHAMPOO - 300ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XMIX SHAMPOO EXTRATO DE BAMBOO - 1L",
+    "preco": 79.9,
+    "custo": 63.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XINTENSE NUTRITIVE TREATMENT SHAMPOO - 300ML",
+    "preco": 58.9,
+    "custo": 47.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - CURLY WURLY SHAMPOO - 230ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - SHAMPOO KISS ME - 250ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "CADIVEU - KIT AÇAÍ OIL SHAMPOO - 250ML + AÇAÍ OIL CONDICIONADO",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "REDKEN BLONDE IDOL SHAMPOO SEM SULFATO - 1L",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "REDKEN COLOR EXTEND MAGNETICS SHAMPOO - 1L",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOREAL SILVER SHAMPOO 250ML - CABELOS GRISALHOS",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "K PRO PROFISSIONAL SILVER SHAMPOO SPECIAL - 240ML",
+    "preco": 46.3,
+    "custo": 37.04,
+    "estoque": 10
+  },
+  {
+    "descricao": "K PRO PROFISSIONAL ENERGY SHAMPOO ICE MAN - 240ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "K PRO PROFISSIONAL SHAMPOO HIDRATANTE SUAVE HIDRA - 240ML",
+    "preco": 46.3,
+    "custo": 37.04,
+    "estoque": 10
+  },
+  {
+    "descricao": "K PRO PROFISSIONAL COLOR SHAMPOO CAVIAR - 240ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA ARGAN OIL PRACAXI - SHAMPOO RECONSTRUTOR - 250ML",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA LOIRA DE FARMÁCIA - SHAMPOO MATIZADOR - 250ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA MEU CACHO MINHA VIDA - SHAMPOO HIDRATANTE - 500ML",
+    "preco": 109.9,
+    "custo": 87.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA MINHA LOLA MINHA VIDA - SHAMPOO SUAVE - 500ML",
+    "preco": 79.9,
+    "custo": 63.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA O PODEROSO SHAMPOO(ZÃO) - SHAMPOO PARA TRATAMENTO - 250ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA SEXY BLONDE - SHAMPOO MATIZADOR - 250ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "EICO - SHAMPOO CACHOS EXTRAORDINÁRIOS - 300ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "EICO - SHAMPOO FIOS DE OURO - 280ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "EICO - SHAMPOO MIRACLE RECONSTRUÇÃO E NUTRIÇÃO IMEDIATA - 300ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "EICO - SHAMPOO PLATINUM - 300ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "EICO - SHAMPOO POWER - 300ML",
+    "preco": 79.9,
+    "custo": 63.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "MAGIC COLOR - SHAMPOO CACHOS MÁGICOS - 300ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "PROBELLE PROFESSIONAL - POÇÃO MÁGICA SHAMPOO ENCANTADO - 250ML",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "PLANCTON PROFESSIONAL - SHAMPOO HYDRASPECIAL QUIABO - 250ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "PLANCTON PROFESSIONAL - SHAMPOO CRESCE MADEIXAS 200ML",
+    "preco": 58.9,
+    "custo": 47.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS - BANHO DE VERNIZ MORANGO SHAMPOO - 500ML",
+    "preco": 79.9,
+    "custo": 63.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "BARBA FORTE DANGER - SHAMPOO BOMBA - 170ML",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "BARBA FORTE LUMBERJACK - SHAMPOO PARA BARBA E CABELO - 170ML",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "BARBA FORTE - SHAMPOO EM BARRA JUNGLE - 130G",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "SALON LINE SHAMPOO DE TRATAMENTO PARA ABALAR #TODECACHO - 300ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "SALON LINE SOS BOMBA DE VITAMINAS - SHAMPOO LIBERADO - 300ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XBLOND SOU LOIRA SHAMPOO - 250ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XMIX SHAMPOO EXTRATO DE BAMBOO - 300ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "FELPS XINTENSE NUTRITIVE TREATMENT SHAMPOO - 1.5L",
+    "preco": 79.9,
+    "custo": 63.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA ONDE O CLORO NÃO TEM VEZ SHAMPOO - 250ML",
+    "preco": 109.9,
+    "custo": 87.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "YBERA SHAMPOO MANUTENÇÃO BOTULÍNICA CAPILAR - 250ML",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "BIEN PROFESSIONAL CACAU SHINE - SHAMPO ANTI-RESÍDUOS - 1L",
+    "preco": 46.3,
+    "custo": 37.04,
+    "estoque": 10
+  },
+  {
+    "descricao": "FOREVER LISS - FORCE REPAIR SHAMPOO REPARADOR - 300ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - COLORS SHAMPOO PRÉ-TRATAMENTO - 230ML",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - BE HAPPY SHAMPOO HIDRATANTE P/ CABELOS SECOS - 250ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - MORTE SÚBITA SHAMPOO HIDRATANTE - 230ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "PROBELLE PROFISSIONAL - SHAMPOO AGE-ULTRA PERFECT - 250ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "PROBELLE PROFISSIONAL - SHAMPOO HOME CARE PÓS QUÍMICA - 250ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOLA - SHAMPOO REJUVENESCEDOR RAPUNZEL - 230ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "INOAR - SHAMPOO DETOX HELP! - 250ML",
+    "preco": 59.9,
+    "custo": 47.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "INOAR - SHAMPOO LOW POO DIVINE CURLS - 250ML",
+    "preco": 48.9,
+    "custo": 39.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOREAL - SHAMPOO VITAMINO COLOR CABELOS COLORIDOS - 500ML",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "LOREAL - SHAMPOO INSTANT CLEAR SCALP CARE - 250ML",
+    "preco": 109.9,
+    "custo": 87.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "CADIVEU - SHAMPOO REVITALIZANTE PLÁSTICA DE ARGILA - 500ML",
+    "preco": 62.9,
+    "custo": 50.32,
+    "estoque": 10
+  },
+  {
+    "descricao": "REDKEN - SHAMPO CURVACEOUS - 1L",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "REDKEN - SHAMPOO FRIZZ DISMISS - 300ML",
+    "preco": 33.9,
+    "custo": 27.12,
+    "estoque": 10
+  },
+  {
+    "descricao": "REDKEN - SHAMPOO FRIZZ DISMISS - 1L",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "AGI MAX - NUTRIMAX SHAMPOO 500ML",
+    "preco": 39.9,
+    "custo": 31.92,
+    "estoque": 10
+  },
+  {
+    "descricao": "AGI MAX - NUTRIMAX SHAMPOO 500ML",
+    "preco": 99.9,
+    "custo": 79.92,
+    "estoque": 10
+  }
+]
