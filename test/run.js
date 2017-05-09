@@ -4,17 +4,10 @@ let chai = require('chai')
 let chaiHttp = require('chai-http')
 let server = require('./../index')
 let expect = chai.expect
-let populate = require('./populate.js')
 
 chai.use(chaiHttp)
 
 describe('Inicio', () => {
-  it('Carregar os dados de teste', (done) => {
-    populate((err) => {
-      expect(err).eq(undefined)
-      done()
-    })
-  })
   describe('/GET Mensagem Bem vindo', () => {
     it('Recebo a mensagem de bem vindo do servidor', (done) => {
       chai.request(server).get('/').end((err, res) => {
@@ -28,5 +21,6 @@ describe('Inicio', () => {
 })
 
 require('./cases/autenticacao')
+require('./cases/empresa')
 require('./cases/produto')
 

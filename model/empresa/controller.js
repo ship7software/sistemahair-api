@@ -15,7 +15,12 @@ EmpresaController.prototype.criar = (req, res, next) => {
             empresaId: mongoose.Types.ObjectId(empresa._id)
         }
 
-        usuarioFacade.create(usuario).then(doc => res.status(201).send(doc)).catch(err => next(err))
+        usuarioFacade.create(usuario).then(doc => res.status(201).send(doc))
+        .catch(err => {
+            empresaFacade.remove(empresa._id).then(() => {
+                next(err)
+            })
+        })
 
     }).catch(err => next(err))
 }

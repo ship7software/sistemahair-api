@@ -31,6 +31,5 @@ const produtoSchema = new Schema({
 }, { collection: 'produtos' })
 
 produtoSchema.index({empresaId: 1, descricao: 1}, {unique: true})
-produtoSchema.index({empresaId: 1, codigoBarra: 1}, {unique: true, sparse: true})
 
 module.exports = mongoose.model('Produto', produtoSchema)

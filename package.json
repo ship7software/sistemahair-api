@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "node_modules/.bin/_mocha test/run.js --timeout=100000",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --timeout=100000 test/run.js",
+    "test": "node test/populate && node_modules/.bin/_mocha test/run.js --timeout=100000",
+    "coverage": "node test/populate && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --timeout=100000 test/run.js check --lines 90",
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "engines": {
@@ -35,6 +35,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "colors": "^1.1.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-config-airbnb-base": "^11.1.3",

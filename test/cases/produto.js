@@ -77,7 +77,6 @@ describe('Produto', () => {
     it('Deve receber erro 500 por paginacao incorreta', (done) => {
       chai.request(server).get('/produto?limit=10&skip=0&sort=%7B%22descricao%22%3A%22a%22%7D').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(500)
-        console.log(res.body)
         done()
       })
     })     

@@ -14,7 +14,7 @@ const config     = yamlConfig.load(__dirname + '/config.yml')
 
 mongoose.Promise = bluebird
 mongoose.connect(config.mongo.url)
-mongoose.set('debug', true);// process.env.NODE_ENV != 'test')
+mongoose.set('debug', process.env.NODE_ENV != 'test')
 
 app.use(cors())
 app.options('*', cors())
