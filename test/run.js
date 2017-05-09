@@ -23,4 +23,5 @@ describe('Inicio', () => {
 require('./cases/autenticacao')
 require('./cases/empresa')
 require('./cases/produto')
+require('./cases/servico')
 
