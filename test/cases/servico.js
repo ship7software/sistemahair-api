@@ -175,7 +175,7 @@ describe('Serviço', () => {
       })
     })
   })
-  describe('Excluindo servicos [/PUT]', () => {
+  describe('Excluindo servicos [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
       chai.request(server).delete('/servico')
         .set('Authorization', bearerToken).end((err, res) => {

@@ -6,21 +6,21 @@ let expect = chai.expect
 
 chai.use(chaiHttp)
 
-describe('cliente', () => {
+describe('Pessoa', () => {
   let bearerToken = null
-  let clienteInserido = null
-  let cliente = {
+  let primeiraPessoa = null
+  let pessoa = {
         nome: 'CAMILA CIRCE',
         telefone: "(31) 991995552"
       }
-  let clienteUnicidade = {
+  let pessoaUnicidade = {
         nome: 'CAMILA CIRCE',
         telefone: '(31) 296457991'
       }
-  let clienteInvalido = {
+  let pessoaInvalido = {
         telefone: '(31)'
       }            
-  let clienteAtualizacao = {
+  let pessoaAtualizacao = {
         nome: 'CAMILA CIRCE FERREIRA',
         telefone: "(31) 991995552"
       }
@@ -35,58 +35,57 @@ describe('cliente', () => {
         done()
       })
   })
-  describe('Listando clientes [/GET]', () => {
-    let primeiroCliente = null
+  describe('Listando pessoas [/GET]', () => {
     it('Deve receber erro 401 ao acessar sem token', (done) => {
-      chai.request(server).get('/cliente').end((err, res) => {
+      chai.request(server).get('/pessoa').end((err, res) => {
         expect(res.status).eq(401)
         expect(res.body).to.have.property('message').and.equal('Token not supplied')
         done()
       })
     })
-    it('Deve receber com sucesso uma lista de 175 clientes', (done) => {
-      chai.request(server).get('/cliente').set('Authorization', bearerToken).end((err, res) => {
+    it('Deve receber com sucesso uma lista de 249 pessoas', (done) => {
+      chai.request(server).get('/pessoa').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)
-        expect(res.body).a('array').and.length(175)
-        primeiroCliente = res.body[0]
+        expect(res.body).a('array').and.length(249)
+        primeiraPessoa = res.body[0]
         done()
       })
     })
-    it('Deve receber com sucesso uma lista de 5 clientes paginados ordenado por nome', (done) => {
-      chai.request(server).get('/cliente?limit=5&skip=0&sort=%7B%22nome%22%3A1%7D').set('Authorization', bearerToken).end((err, res) => {
+    it('Deve receber com sucesso uma lista de 5 pessoas paginados ordenado por nome', (done) => {
+      chai.request(server).get('/pessoa?limit=5&skip=0&sort=%7B%22nome%22%3A1%7D').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)
         expect(res.body.items).a('array').and.length(5)
-        expect(res.body.items[0].nome).eq('AIDE FERREIRA FERRAZ')
+        expect(res.body.items[0].nome).eq('ACILIO OLIVEIRA DE LARA RESENDE')
         done()
       })
     })    
     it('Deve receber erro 500 por paginacao incorreta', (done) => {
-      chai.request(server).get('/cliente?limit=10&skip=0&sort=%7B%22nome%22%3A%22a%22%7D').set('Authorization', bearerToken).end((err, res) => {
+      chai.request(server).get('/pessoa?limit=10&skip=0&sort=%7B%22nome%22%3A%22a%22%7D').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(500)
         done()
       })
     })     
-    it('Deve retornar 500 quando buscar por cliente com id invalido', (done) => {
-      chai.request(server).get('/cliente/a').set('Authorization', bearerToken).end((err, res) => {
+    it('Deve retornar 500 quando buscar por pessoa com id invalido', (done) => {
+      chai.request(server).get('/pessoa/a').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(500)
         done()
       })
     })
-    it('Deve retornar 404 quando buscar por cliente com id valido porem inexistente', (done) => {
-      chai.request(server).get('/cliente/' + primeiroCliente.empresaId).set('Authorization', bearerToken).end((err, res) => {
+    it('Deve retornar 404 quando buscar por pessoa com id valido porem inexistente', (done) => {
+      chai.request(server).get('/pessoa/' + primeiraPessoa.empresaId).set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(404)
         done()
       })
     })
-    it('Deve retornar com sucesso o primeiro cliente', (done) => {
-      chai.request(server).get('/cliente/' + primeiroCliente._id).set('Authorization', bearerToken).end((err, res) => {
+    it('Deve retornar com sucesso a primeira pessoa', (done) => {
+      chai.request(server).get('/pessoa/' + primeiraPessoa._id).set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)
         done()
       })
     })
-    it('Deve retornar com sucesso o cliente com nome DÉBORA CHAMON', (done) => {
+    it('Deve retornar com sucesso a pessoa com nome DÉBORA CHAMON', (done) => {
       chai.request(server)
-        .get('/cliente?nome=DÉBORA CHAMON')
+        .get('/pessoa?nome=DÉBORA CHAMON')
         .set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)
         expect(res.body).a('array').and.length(1)
@@ -96,55 +95,36 @@ describe('cliente', () => {
       })
     })
   })
-  describe('Inserindo clientes [/POST]', () => {
-    it('Deve receber erro 400 por falta de campos obrigatorios', (done) =>{
-      chai.request(server).post('/cliente')
-        .send(clienteInvalido)
+  describe('Inserindo pessoas [/POST]', () => {
+    it('Deve receber erro 404 porque a inserção deve ser feita no tipo específico', (done) =>{
+      chai.request(server).post('/pessoa')
+        .send(pessoa)
         .set('Authorization', bearerToken).end((err, res) => {
-          expect(res.status).eq(400)
-          expect(res.body.nome).not.eq(undefined)
-          done()
-      })
-    })
-    it('Deve receber erro 400 por quebra de unicidade', (done) =>{
-      chai.request(server).post('/cliente')
-        .send(clienteUnicidade)
-        .set('Authorization', bearerToken).end((err, res) => {
-          expect(res.status).eq(400)
-          done()
-      })
-    })    
-    it('Deve ser inserido com sucesso', (done) =>{
-      chai.request(server).post('/cliente')
-        .send(cliente)
-        .set('Authorization', bearerToken).end((err, res) => {
-          expect(res.status).eq(201)
-          expect(res.body.nome).eq(cliente.nome)
-          clienteInserido = res.body
+          expect(res.status).eq(404)
           done()
       })
     })
   })
-  describe('Atualizando clientes [/PUT]', () => {
+  describe('Atualizando pessoas [/PUT]', () => {
     it('Deve receber erro 400 por quebra de unicidade', (done) => {
-      chai.request(server).put('/cliente/' + clienteInserido._id)
-        .send(clienteUnicidade)
+      chai.request(server).put('/pessoa/' + primeiraPessoa._id)
+        .send(pessoaUnicidade)
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(400)
           done()
       })
     })    
-    it('Deve retornar 404 quando atualizar cliente com id valido porem inexistente', (done) => {
-      chai.request(server).put('/cliente/' + clienteInserido.empresaId)
-        .send(cliente)
+    it('Deve retornar 404 quando atualizar pessoa com id valido porem inexistente', (done) => {
+      chai.request(server).put('/pessoa/' + primeiraPessoa.empresaId)
+        .send(pessoa)
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(404)
           done()
       })
     }) 
     it('Deve ser atualizado com sucesso', (done) => {
-      chai.request(server).put('/cliente/' + clienteInserido._id)
-        .send(clienteAtualizacao)
+      chai.request(server).put('/pessoa/' + primeiraPessoa._id)
+        .send(pessoaAtualizacao)
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(200)
           expect(res.body.nModified).eq(1)
@@ -152,30 +132,30 @@ describe('cliente', () => {
       })
     })
   })
-  describe('Excluindo clientes [/DELETE]', () => {
+  describe('Excluindo pessoas [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
-      chai.request(server).delete('/cliente')
+      chai.request(server).delete('/pessoa')
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(404)
           done()
       })
     })
     it('Deve receber erro 404 por informar ID valido porem inexistente', (done) => {
-      chai.request(server).delete('/cliente/' + clienteInserido.empresaId)
+      chai.request(server).delete('/pessoa/' + primeiraPessoa.empresaId)
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(404)
           done()
       })
     })
     it('Deve receber erro 500 por informar ID invalido', (done) => {
-      chai.request(server).delete('/cliente/a')
+      chai.request(server).delete('/pessoa/a')
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(500)
           done()
       })
     })         
     it('Deve ser removido com sucesso', (done) => {
-      chai.request(server).delete('/cliente/' + clienteInserido._id)
+      chai.request(server).delete('/pessoa/' + primeiraPessoa._id)
         .set('Authorization', bearerToken).end((err, res) => {
           expect(res.status).eq(204)
           done()

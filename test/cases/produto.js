@@ -174,7 +174,7 @@ describe('Produto', () => {
       })
     })
   })
-  describe('Excluindo produtos [/PUT]', () => {
+  describe('Excluindo produtos [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
       chai.request(server).delete('/produto')
         .set('Authorization', bearerToken).end((err, res) => {

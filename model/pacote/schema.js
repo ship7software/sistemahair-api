@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema   = mongoose.Schema
 
 const ProdutoPacote = new Schema({
-  idProduto: {
+  produtoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Produto',
     required: true
@@ -15,7 +15,7 @@ const ProdutoPacote = new Schema({
 })
 
 const ServicoPacote = new Schema({
-  idServico: {
+  servicoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Servico',
     required: true
@@ -52,6 +52,9 @@ const pacoteSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Empresa',
     required: true
+  },
+  preco: {
+    type: Number
   }
 }, { collection: 'pacotes' })
 

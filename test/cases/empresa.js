@@ -211,7 +211,7 @@ describe('Empresa', () => {
       })
     })    
   })
-  describe('Excluindo empresas [/PUT]', () => {
+  describe('Excluindo empresas [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
       chai.request(server).delete('/empresa')
         .set('Authorization', bearerToken).end((err, res) => {

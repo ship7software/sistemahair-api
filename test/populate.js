@@ -25,14 +25,16 @@ function doOperations(idx, id, cb){
     console.log(('Iniciando exclusão ' + modelName).yellow)
     facade.bulkRemoveAll().then(() => {
       console.log(('Finalizada exclusão ' + modelName).green)
-      for (var index = 0; index < db[modelName].length; index++) {
-        db[modelName][index].empresaId = id
-      }
-      console.log(('Iniciando inserção ' + modelName).yellow)
-      facade.bulkInsert(db[modelName]).then(() => { 
-        console.log(('Finalizada inserção ' + modelName).green)
-        doOperations(idx, id, cb)
-      }).catch(err => { cb(err) })
+      if(db[modelName].length > 0) {
+        for (var index = 0; index < db[modelName].length; index++) {
+          db[modelName][index].empresaId = id
+        }
+        console.log(('Iniciando inserção ' + modelName).yellow)
+        facade.bulkInsert(db[modelName]).then(() => { 
+          console.log(('Finalizada inserção ' + modelName).green)
+          doOperations(idx, id, cb)
+        }).catch(err => { cb(err) })
+      } else { doOperations(idx, id, cb) }
     }).catch(err => { cb(err) })
   } else {
     cb()

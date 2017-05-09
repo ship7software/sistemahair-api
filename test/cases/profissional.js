@@ -164,7 +164,7 @@ describe('Profissional', () => {
       })
     })
   })
-  describe('Excluindo profissionais [/PUT]', () => {
+  describe('Excluindo profissionais [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
       chai.request(server).delete('/profissional')
         .set('Authorization', bearerToken).end((err, res) => {

@@ -152,7 +152,7 @@ describe('Categoria', () => {
       })
     })
   })
-  describe('Excluindo categorias [/PUT]', () => {
+  describe('Excluindo categorias [/DELETE]', () => {
     it('Deve receber erro 404 por nao informar o ID', (done) => {
       chai.request(server).delete('/categoria')
         .set('Authorization', bearerToken).end((err, res) => {
