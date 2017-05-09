@@ -2,8 +2,6 @@
 
 [![build status](https://gitlab.com/ship7software/sistemahair-api/badges/master/build.svg)](https://gitlab.com/ship7software/sistemahair-api/commits/master)
 [![coverage report](https://gitlab.com/ship7software/sistemahair-api/badges/master/coverage.svg)](https://gitlab.com/ship7software/sistemahair-api/commits/master)
-![test](https://gitlab.com/ship7software/sistemahair-api/badges/master/coverage.svg?job=test)
-![lint](https://gitlab.com/ship7software/sistemahair-api/badges/master/coverage.svg?job=lint)
 
 
 API dos sites Sistema Hair
