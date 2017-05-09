@@ -19,20 +19,14 @@ UsuarioController.prototype.auth = (req, res, next) => {
             res.status(401).json({ errorCode: 'INVALID_USER' })
             return
         }
-        usuario.verificarSenha(req.body.password, (err, senhaEstaCorreta) => {
-            if(err){
-                next(err)
-                return
-            }
-
-            if(!senhaEstaCorreta) {
-                res.status(401).json({ errorCode: 'INVALID_PASSWORD' })
-                return
-            }
-            gerarToken(usuario, req.app.get('superSecret'), function(response){
-                    res.status(200).json(response)
-                })
-            })
+        
+        if(!usuario.verificarSenha(req.body.password)) {
+            res.status(401).json({ errorCode: 'INVALID_PASSWORD' })
+            return
+        }
+        gerarToken(usuario, req.app.get('superSecret'), function(response){
+            res.status(200).json(response)
+        })
     })
     .catch(err => next(err))    
 }

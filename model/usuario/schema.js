@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const crypto = require('./../../lib/crypto')
 const Schema   = mongoose.Schema
-const SALT_WORK_FACTOR = 10
-
 
 const usuarioSchema = new Schema({
   marca: {
@@ -37,22 +35,12 @@ usuarioSchema.pre('save', function(next){
   var usuario = this
   if (!usuario.isModified('password')) return next()
 
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-    if (err) return next(err)
-
-    bcrypt.hash(usuario.password, salt, function(err, hash) {
-      if (err) return next(err)
-      usuario.password = hash
-      next()
-    })
-  })
+  usuario.password = crypto.encrypt(usuario.password)
+  next();
 })
 
-usuarioSchema.methods.verificarSenha = function(passToCheck, cb) {
-  bcrypt.compare(passToCheck, this.password, function(err, isMatch) {
-      if (err) return cb(err)
-      cb(null, isMatch)
-  })  
+usuarioSchema.methods.verificarSenha = function(passToCheck) {
+  return crypto.decrypt(this.password) == passToCheck
 }
 
 module.exports = mongoose.model('Usuario', usuarioSchema)

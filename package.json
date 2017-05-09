@@ -11,11 +11,10 @@
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "engines": {
-    "node": "6"
+    "node": "5"
   },
   "author": "hermogenes <ferreira.hermogenes@gmail.com>",
   "dependencies": {
-    "bcrypt": "^1.0.2",
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
@@ -24,13 +23,10 @@
     "install": "^0.10.0",
     "jsonwebtoken": "^7.2.1",
     "lodash": "^4.17.4",
-    "mailgun-js": "^0.10.1",
     "mongoose": "^4.8.0",
     "morgan": "^1.7.0",
-    "mustache": "^2.3.0",
     "node-yaml-config": "0.0.4",
-    "npm": "^4.1.2",
-    "xml2js": "^0.4.17"
+    "npm": "^4.1.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
