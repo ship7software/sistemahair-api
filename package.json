@@ -7,7 +7,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "node test/populate && node_modules/.bin/_mocha test/run.js --timeout=100000",
-    "coverage": "node test/populate && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --timeout=100000 test/run.js check --lines 90",
+    "coverage": "node test/populate && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- --timeout=100000 test/run.js",
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "engines": {

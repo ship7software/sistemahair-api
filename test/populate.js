@@ -52,8 +52,8 @@ var cb = function(err){
     console.log(err)
   } else {
     console.log('Processo Finalizado com sucesso'.green)        
-    process.exit(0)
   }
+  process.exit(0)
 }
 console.log('Verificando empresa padrão'.yellow)
 

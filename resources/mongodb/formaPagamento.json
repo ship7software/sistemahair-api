@@ -3,56 +3,48 @@
    "nome": "DINHEIRO",
    "taxa": 0,
    "prazoRecebimento": 0,
-   "conta": "CAIXA",
    "tipoBaixa": "A"
  },
  {
    "nome": "CARTÃO DE CRÉDITO",
    "taxa": 0,
    "prazoRecebimento": 30,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  },
  {
    "nome": "CARTÃO DE DÉBITO",
    "taxa": 0,
    "prazoRecebimento": 0,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  },
  {
    "nome": "CHEQUE PRÉ",
    "taxa": 0,
    "prazoRecebimento": 0,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  },
  {
    "nome": "CHEQUE A VISTA",
    "taxa": 0,
    "prazoRecebimento": 0,
-   "conta": "CAIXA",
    "tipoBaixa": "M"
  },
  {
    "nome": "CONVÊNIO",
    "taxa": 0,
    "prazoRecebimento": 0,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  },
  {
    "nome": "DEPÓSITO",
    "taxa": 0,
    "prazoRecebimento": 1,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  },
  {
    "nome": "BOLETO",
    "taxa": 0,
    "prazoRecebimento": 1,
-   "conta": "BANCO",
    "tipoBaixa": "M"
  }
 ]

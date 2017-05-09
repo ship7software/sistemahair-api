@@ -24,4 +24,6 @@ require('./cases/autenticacao')
 require('./cases/empresa')
 require('./cases/produto')
 require('./cases/servico')
-
+require('./cases/conta')
+require('./cases/formaPagamento')
+require('./cases/categoria')
