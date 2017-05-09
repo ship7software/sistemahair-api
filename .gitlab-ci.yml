@@ -7,15 +7,18 @@ cache:
 before_script:
   - npm install
 
-lint:
+jobLint:
+  stage: lint
   script:
    - npm run lint
 
-test:
+jobTest:
+  stage: test
   script:
    - npm run test
 
-coverage:
+jobCoverage:
+  stage: coverage
   script:
     - npm run coverage
 
