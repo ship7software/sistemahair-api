@@ -17,4 +17,9 @@ test:
 
 coverage:
   script:
-    - npm run coverage       
+    - npm run coverage
+
+steps:
+  - lint
+  - test
+  - coverage
