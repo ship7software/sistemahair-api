@@ -1,7 +1,6 @@
-const Controller = require('../../lib/controller');
-const formaPagamentoFacade  = require('./facade');
-const mongoose = require('mongoose');
+const Controller = require('../../lib/controller')
+const formaPagamentoFacade  = require('./facade')
 
 class FormaPagamentoController extends Controller {}
 
-module.exports = new FormaPagamentoController(formaPagamentoFacade);
+module.exports = new FormaPagamentoController(formaPagamentoFacade)

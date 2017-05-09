@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const categoriaSchema = new Schema({
   descricao: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   tipo: {
     type: String,
@@ -16,7 +15,14 @@ const categoriaSchema = new Schema({
     type: Boolean,
     required: true,
     default: true
+  },
+  empresaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Empresa',
+    required: true
   }
-});
+})
 
-module.exports = mongoose.model('Categoria', categoriaSchema);
+categoriaSchema.index({empresaId: 1, descricao: 1}, {unique: true})
+
+module.exports = mongoose.model('Categoria', categoriaSchema)

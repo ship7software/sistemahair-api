@@ -1,17 +1,23 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const formaPagamentoSchema = new Schema({
   nome: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   ativo: {
     type: Boolean,
     required: true,
     default: true
+  },
+  empresaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Empresa',
+    required: true
   }
-}, { collection: 'formasPagamento' });
+}, { collection: 'formasPagamento' })
 
-module.exports = mongoose.model('FormaPagamento', formaPagamentoSchema);
+formaPagamentoSchema.index({empresaId: 1, nome: 1}, {unique: true})
+
+module.exports = mongoose.model('FormaPagamento', formaPagamentoSchema)

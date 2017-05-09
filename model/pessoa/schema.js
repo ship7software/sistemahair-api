@@ -1,26 +1,21 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const pessoaSchema = new Schema({
   nome: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   cpfCnpj: {
     type: String,
-    unique: true,
     sparse: true
   },
   telefone: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   email: {
-    type: String,
-    unique: true,
-    sparse: true
+    type: String
   },
   razaoSocial: {
     type: String
@@ -32,9 +27,6 @@ const pessoaSchema = new Schema({
     type: String
   },
   nomeResponsavel: {
-    type: String
-  },
-  razaoSocial: {
     type: String
   },
   dataNascimento: {
@@ -65,7 +57,16 @@ const pessoaSchema = new Schema({
     type: Boolean,
     required: true,
     default: true
+  },
+  empresaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Empresa',
+    required: true
   }
-}, { discriminatorKey: 'tipo' });
+}, { discriminatorKey: 'tipo' })
 
-module.exports = mongoose.model('Pessoa', pessoaSchema);
+pessoaSchema.index({empresaId: 1, email: 1}, {unique: true, sparse: true})
+pessoaSchema.index({empresaId: 1, cpfCnpj: 1}, {unique: true, sparse: true})
+pessoaSchema.index({empresaId: 1, telefone: 1}, {unique: true, sparse: true})
+
+module.exports = mongoose.model('Pessoa', pessoaSchema)

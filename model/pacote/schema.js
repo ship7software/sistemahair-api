@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const ProdutoPacote = new Schema({
   idProduto: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Produto",
+    ref: 'Produto',
     required: true
   },
   quantidade: {
@@ -12,12 +12,12 @@ const ProdutoPacote = new Schema({
     required: true,
     min: 1
   }
-});
+})
 
 const ServicoPacote = new Schema({
   idServico: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Servico",
+    ref: 'Servico',
     required: true
   },
   quantidade: {
@@ -25,13 +25,12 @@ const ServicoPacote = new Schema({
     required: true,
     min: 1
   }
-});
+})
 
 const pacoteSchema = new Schema({
   descricao: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   dataInicio: {
     type: Date,
@@ -48,7 +47,14 @@ const pacoteSchema = new Schema({
   servicos: {
     type: [ServicoPacote],
     default: []
+  },
+  empresaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Empresa',
+    required: true
   }
-}, { collection: 'pacotes' });
+}, { collection: 'pacotes' })
 
-module.exports = mongoose.model('Pacote', pacoteSchema);
+pacoteSchema.index({empresaId: 1, descricao: 1}, {unique: true})
+
+module.exports = mongoose.model('Pacote', pacoteSchema)

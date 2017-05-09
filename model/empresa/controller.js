@@ -1,7 +1,7 @@
-const Controller = require('../../lib/controller');
-const usuarioFacade = require('../usuario/facade');
-const empresaFacade  = require('./facade');
-const mongoose = require('mongoose');
+const Controller = require('../../lib/controller')
+const usuarioFacade = require('../usuario/facade')
+const empresaFacade  = require('./facade')
+const mongoose = require('mongoose')
 
 class EmpresaController extends Controller {}
 
@@ -13,11 +13,11 @@ EmpresaController.prototype.criar = (req, res, next) => {
             nome: empresa.nome,
             marca: empresa.subdominio,
             empresaId: mongoose.Types.ObjectId(empresa._id)
-        };
+        }
 
-        usuarioFacade.create(usuario).then(doc => res.status(201).send(doc)).catch(err => next(err));
+        usuarioFacade.create(usuario).then(doc => res.status(201).send(doc)).catch(err => next(err))
 
-    }).catch(err => next(err));
-};
+    }).catch(err => next(err))
+}
 
-module.exports = new EmpresaController(empresaFacade);
+module.exports = new EmpresaController(empresaFacade)

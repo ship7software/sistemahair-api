@@ -1,6 +1,6 @@
-const Facade = require('../../lib/facade');
-const Schema  = require('./schema');
+const Facade = require('../../lib/facade')
+const Schema  = require('./schema')
 
 class PacoteFacade extends Facade {}
 
-module.exports = new PacoteFacade(Schema);
+module.exports = new PacoteFacade(Schema)

@@ -1,7 +1,6 @@
-const Controller = require('../../lib/controller');
-const pessoaFacade  = require('./facade');
-const mongoose = require('mongoose');
+const Controller = require('../../lib/controller')
+const pessoaFacade  = require('./facade')
 
 class PessoaController extends Controller {}
 
-module.exports = new PessoaController(pessoaFacade);
+module.exports = new PessoaController(pessoaFacade)

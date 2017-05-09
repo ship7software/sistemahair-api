@@ -1,7 +1,6 @@
-const Controller = require('../../lib/controller');
-const pacoteFacade  = require('./facade');
-const mongoose = require('mongoose');
+const Controller = require('../../lib/controller')
+const pacoteFacade  = require('./facade')
 
 class PacoteController extends Controller {}
 
-module.exports = new PacoteController(pacoteFacade);
+module.exports = new PacoteController(pacoteFacade)

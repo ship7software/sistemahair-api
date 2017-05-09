@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const empresaSchema = new Schema({
   email: {
@@ -65,6 +65,6 @@ const empresaSchema = new Schema({
     required: true,
     unique: true
   }
-});
+})
 
-module.exports = mongoose.model('Empresa', empresaSchema);
+module.exports = mongoose.model('Empresa', empresaSchema)

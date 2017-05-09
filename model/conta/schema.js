@@ -1,17 +1,23 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema   = mongoose.Schema
 
 const contaSchema = new Schema({
   nome: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   ativo: {
     type: Boolean,
     required: true,
     default: true
+  },
+  empresaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Empresa',
+    required: true
   }
-});
+})
 
-module.exports = mongoose.model('Conta', contaSchema);
+contaSchema.index({empresaId: 1, nome: 1}, {unique: true})
+
+module.exports = mongoose.model('Conta', contaSchema)

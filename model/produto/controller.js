@@ -1,7 +1,6 @@
-const Controller = require('../../lib/controller');
-const produtoFacade  = require('./facade');
-const mongoose = require('mongoose');
+const Controller = require('../../lib/controller')
+const produtoFacade  = require('./facade')
 
 class ProdutoController extends Controller {}
 
-module.exports = new ProdutoController(produtoFacade);
+module.exports = new ProdutoController(produtoFacade)
