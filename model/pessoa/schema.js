@@ -65,8 +65,8 @@ const pessoaSchema = new Schema({
   }
 }, { discriminatorKey: 'tipo' })
 
-pessoaSchema.index({empresaId: 1, email: 1}, {unique: true, sparse: true})
-pessoaSchema.index({empresaId: 1, cpfCnpj: 1}, {unique: true, sparse: true})
-pessoaSchema.index({empresaId: 1, telefone: 1}, {unique: true, sparse: true})
+pessoaSchema.index({empresaId: 1, tipo: 1, email: 1}, {unique: true, sparse: true})
+pessoaSchema.index({empresaId: 1, tipo: 1, cpfCnpj: 1}, {unique: true, sparse: true})
+pessoaSchema.index({empresaId: 1, tipo: 1, telefone: 1}, {unique: true, sparse: true})
 
 module.exports = mongoose.model('Pessoa', pessoaSchema)
