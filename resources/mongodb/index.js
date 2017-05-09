@@ -1,7 +1,7 @@
 let db = { models: [] }
 
 const fs = require('fs')
-const arquivos = fs.readdirSync(__dirname, '.json')
+const arquivos = fs.readdirSync(__dirname)
 
 for (let idx = 0; idx < arquivos.length; idx++) {
   const element = arquivos[idx]
