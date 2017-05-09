@@ -1,4 +1,4 @@
 applications:
 - name: sistemahair-api-dev
   command: npm start
-  memory: 128m
+  memory: 256m

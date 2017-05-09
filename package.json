@@ -11,7 +11,7 @@
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "engines": {
-    "node": "5"
+    "node": "6"
   },
   "author": "hermogenes <ferreira.hermogenes@gmail.com>",
   "dependencies": {
