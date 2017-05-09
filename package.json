@@ -11,7 +11,7 @@
     "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "engines": {
-    "node": ">=6"
+    "node": "6"
   },
   "author": "hermogenes <ferreira.hermogenes@gmail.com>",
   "dependencies": {
@@ -37,14 +37,6 @@
     "chai-http": "^3.0.0",
     "colors": "^1.1.2",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-config-airbnb-base": "^11.1.3",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^7.0.0",
-    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.3.0",
     "nodemon": "^1.11.0"
