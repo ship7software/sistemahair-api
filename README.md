@@ -1,6 +1,7 @@
 # sistemahair-api
 
-[![generator-api](https://img.shields.io/badge/built%20with-generator--api-green.svg)](https://github.com/ndelvalle/generator-api)
+[![build status](https://gitlab.com/ship7software/sistemahair-api/badges/master/build.svg)](https://gitlab.com/ship7software/sistemahair-api/commits/master)
+[![coverage report](https://gitlab.com/ship7software/sistemahair-api/badges/master/coverage.svg)](https://gitlab.com/ship7software/sistemahair-api/commits/master)
 
 API dos sites Sistema Hair
 
