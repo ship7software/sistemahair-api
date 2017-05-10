@@ -9,11 +9,11 @@ const gerarToken = (usuario, secret, cb) => {
         expiresIn: '1d'
     })
     
-    cb({ token: token })
+    cb({ token: token, user: usuario })
 }
 
 UsuarioController.prototype.auth = (req, res, next) => {
-    usuarioFacade.findOne({ login: req.body.login })
+    usuarioFacade.findOne({ login: req.body.login }, 'empresaId')
     .then(usuario => {
         if(!usuario){
             res.status(401).json({ errorCode: 'INVALID_USER' })
