@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test'
+process.env.NODE_ENV = process.env.NODE_ENV || 'test'
 require('colors')
 require('./../index')
 const mongoose   = require('mongoose')

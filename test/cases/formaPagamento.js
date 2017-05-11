@@ -61,7 +61,7 @@ describe('FormaPagamento', () => {
       })
     })
     it('Deve receber com sucesso uma lista de 5 formas de pagamento paginados ordenado por nome', (done) => {
-      chai.request(server).get('/formaPagamento?limit=5&skip=0&sort=%7B%22nome%22%3A1%7D').set('Authorization', bearerToken).end((err, res) => {
+      chai.request(server).get('/formaPagamento?limit=5&skip=0&sort%5Bnome%5D=1').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)
         expect(res.body.items).a('array').and.length(5)
         expect(res.body.items[0].nome).eq('BOLETO')
@@ -69,13 +69,13 @@ describe('FormaPagamento', () => {
       })
     })   
     it('Deve receber erro 500 por filtro invalido', (done) => {
-      chai.request(server).get('/formaPagamento?taxa=aalimit=10&skip=0&sort=%7B%22nome%22%3A1%7D').set('Authorization', bearerToken).end((err, res) => {
+      chai.request(server).get('/formaPagamento?taxa=aalimit=10&skip=0&sort%5Bnome%5D=1').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(500)
         done()
       })
     })     
     it('Deve receber erro 500 por paginacao incorreta', (done) => {
-      chai.request(server).get('/formaPagamento?limit=10&skip=0&sort=%7B%22nome%22%3A%22a%22%7D').set('Authorization', bearerToken).end((err, res) => {
+      chai.request(server).get('/formaPagamento?limit=10&skip=0&sort%5Bnome%5D=a').set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(500)
         done()
       })
