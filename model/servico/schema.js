@@ -25,8 +25,24 @@ const servicoSchema = new Schema({
     ref: 'Empresa',
     required: true
   }
-}, { collection: 'servicos' })
+}, { 
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
+  collection: 'servicos' 
+})
 
 servicoSchema.index({empresaId: 1, descricao: 1}, {unique: true})
+
+servicoSchema.virtual('duracaoPadraoVisual').get(function() {
+  let desc = ''
+  const horas = Math.floor(this.duracaoPadrao / 60)
+  const minutos = this.duracaoPadrao % 60
+  if(horas > 0)
+    desc = desc.concat(horas, 'h ')
+  if(minutos > 0)
+    desc = desc.concat(minutos, 'm')
+
+  return desc.trim()
+})
 
 module.exports = mongoose.model('Servico', servicoSchema)
