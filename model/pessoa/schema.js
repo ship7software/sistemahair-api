@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema
 const pessoaSchema = new Schema({
   nome: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   cpfCnpj: {
     type: String,
@@ -18,7 +19,8 @@ const pessoaSchema = new Schema({
     type: String
   },
   razaoSocial: {
-    type: String
+    type: String,
+    uppercase: true
   },
   inscricaoEstadual: {
     type: String
@@ -27,7 +29,8 @@ const pessoaSchema = new Schema({
     type: String
   },
   nomeResponsavel: {
-    type: String
+    type: String,
+    uppercase: true
   },
   dataNascimento: {
     type: Date
@@ -36,22 +39,27 @@ const pessoaSchema = new Schema({
     type: String
   },
   logradouro: {
-    type: String
+    type: String,
+    uppercase: true
   },
   numeroEndereco: {
-    type: String
+    type: String,
+    uppercase: true
   },
   complemento: {
-    type: String
+    type: String,
+    uppercase: true
   },
   bairro: {
-    type: String
+    type: String,
+    uppercase: true
   },
   estado: {
     type: String
   },
   cidade: {
-    type: String
+    type: String,
+    uppercase: true
   },
   ativo: {
     type: Boolean,

@@ -23,30 +23,37 @@ const empresaSchema = new Schema({
     type: String
   },
   logradouro: {
-    type: String
+    type: String,
+    uppercase: true
   },
   numeroEndereco: {
-    type: String
+    type: String,
+    uppercase: true
   },
   complemento: {
-    type: String
+    type: String,
+    uppercase: true
   },
   bairro: {
-    type: String
+    type: String,
+    uppercase: true
   },
   estado: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   cidade: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   cpfCnpj: {
     type: String
   },
   razaoSocial: {
-    type: String
+    type: String,
+    uppercase: true
   },
   inscricaoMunicipal: {
     type: String
@@ -58,7 +65,8 @@ const empresaSchema = new Schema({
     type: String
   },
   responsavel: {
-    type: String
+    type: String,
+    uppercase: true
   },
   subdominio: {
     type: String,

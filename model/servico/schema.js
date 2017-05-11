@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema
 const servicoSchema = new Schema({
   descricao: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   preco: {
     type: Number

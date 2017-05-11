@@ -30,7 +30,8 @@ const ServicoPacote = new Schema({
 const pacoteSchema = new Schema({
   descricao: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   dataInicio: {
     type: Date,

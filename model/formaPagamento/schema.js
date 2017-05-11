@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema
 const formaPagamentoSchema = new Schema({
   nome: {
     type: String,
-    required: true
+    required: true,
+    uppercase: true
   },
   taxa: {
     type: Number,
