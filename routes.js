@@ -1,4 +1,5 @@
 const Router = require('express').Router
+const cep = require('busca-cep')
 
 const router = new Router()
 
@@ -38,6 +39,32 @@ router.use('/pessoa', pessoa)
 router.use('/cliente', cliente)
 router.use('/fornecedor', fornecedor)
 router.use('/profissional', profissional)
+
+router.route('/publico/cep/:cep').get((req, res, next) => {
+  cep(req.params.cep).then((ret) => {
+    res.status(200).json(ret)
+  }).catch(err => res.status(404).json(err))
+})
+
+const requestify = require('requestify')
+const _ = require('lodash')
+
+/*
+
+router.route('/publico/estado/:uf').get((req, res, next) => {
+  requestify.get('http://educacao.dadosabertosbr.com/api/cidades/' + req.params.uf.toLowerCase()).then((ret) => {
+    let cidades = []
+    _.each(ret.getBody(), (cid) => {
+      const parts = cid.split(':')
+      if(parts.length > 1)
+        cidades.push(parts[1])
+      else
+        cidades.push(cid)
+    })
+    res.status(200).json(cidades)
+  }).catch(err => res.json(err))
+})
+*/
 
 router.route('/publico/empresa/criar').post((...args) => empresaController.criar(...args))
 
