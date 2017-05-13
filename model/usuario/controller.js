@@ -13,9 +13,21 @@ const gerarToken = (usuario, secret, cb) => {
 }
 
 UsuarioController.prototype.auth = (req, res, next) => {
-    usuarioFacade.findOne({ login: req.body.login }, 'empresaId')
+    let filter = { login: req.body.login }
+    let populate = { path: 'empresaId' }
+
+    if(req.hostname == 'app') {
+        populate.match = { $or: [
+            { subdominio: req.hostname },
+            { email: req.body.login }
+        ]}
+    } else {
+        populate.match = { subdominio: req.hostname }
+    }
+
+    usuarioFacade.findOne(filter, populate)
     .then(usuario => {
-        if(!usuario){
+        if(!usuario || !usuario.empresaId){
             res.status(401).json({ errorCode: 'INVALID_USER' })
             return
         }

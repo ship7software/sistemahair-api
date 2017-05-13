@@ -11,7 +11,8 @@ console.log('Iniciando preparo do ambiente de Teste'.yellow)
 let empresaB = {
   email: 'local.superhair@mailinator.com',
   nome: 'Local',
-  subdominio: 'localhost',
+  nomeResponsavel: 'Hermógenes Ferreira',
+  subdominio: '127.0.0.1',
   telefone: '(31) 99197-5067',
   estado: 'MG',
   cidade: 'Montes Claros'

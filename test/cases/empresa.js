@@ -15,7 +15,8 @@ describe('Empresa', () => {
     "telefone": "(31) 9999-9991",
     "nome": "Empresa 1",
     "email": "empresa1.hair@mailinator.com",
-    "password": "1234567@"
+    "password": "1234567@",
+    "nomeResponsavel": "Hermógenes Ferreira"
   }
   let empresaUnicidade = {
     "subdominio": "empresa1",
@@ -24,7 +25,8 @@ describe('Empresa', () => {
     "telefone": "(31) 9999-9991",
     "nome": "Empresa 1",
     "email": "local.superhair@mailinator.com",
-    "password": "1234567@"
+    "password": "1234567@",
+    "nomeResponsavel": "Hermógenes Ferreira"
   }
   let empresaAtualizacao = {
     "subdominio": "empresa1",
@@ -32,7 +34,8 @@ describe('Empresa', () => {
     "estado": "MG",
     "telefone": "(31) 9999-9991",
     "nome": "Empresa 1",
-    "email": "empresa2.hair@mailinator.com"
+    "email": "empresa2.hair@mailinator.com",
+    "nomeResponsavel": "Hermógenes Ferreira"
   }  
   let empresaFaltaDados = {
     "subdominio": "empresa1",
@@ -46,7 +49,8 @@ describe('Empresa', () => {
     "estado": "MG",
     "telefone": "(31) 9999-9990",
     "nome": "Empresa empresaFaltaSenha",
-    "email": "empresaFaltaSenha.hair@mailinator.com"
+    "email": "empresaFaltaSenha.hair@mailinator.com",
+    "nomeResponsavel": "Hermógenes Ferreira"
   }  
 
   describe('Criando empresas [/POST]', () => {
@@ -75,17 +79,6 @@ describe('Empresa', () => {
           done()
       })
     })
-    it('Deve fazer login com a empresa adicionada', (done) => {
-        chai.request(server).post('/usuario/auth').send({
-          login: empresa1.email,
-          password: empresa1.password
-        }).end((err, res) => {
-          expect(res.status).eq(200)
-          expect(res.body).to.have.property('token')
-          bearerToken = 'Bearer ' + res.body.token
-          done()
-        })
-    })    
     it('Deve existir uma empresa com o email inserido', (done) =>{
       chai.request(server).get('/empresa?email=' + usuarioInserido.login).set('Authorization', bearerToken).end((err, res) => {
         expect(res.status).eq(200)

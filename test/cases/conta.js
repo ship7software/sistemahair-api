@@ -19,7 +19,7 @@ describe('Conta', () => {
   let contaAtualizacao = {
         nome: 'PAGSEGURO - UOL'
       }
-  beforeEach('Dado que eu estou logado com um usuário válido', (done) => {
+  before('Dado que eu estou logado com um usuário válido', (done) => {
       chai.request(server).post('/usuario/auth').send({
         login: 'local.superhair@mailinator.com',
         password: '123456@'

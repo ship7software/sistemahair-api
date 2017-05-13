@@ -64,14 +64,20 @@ const empresaSchema = new Schema({
   celular: {
     type: String
   },
-  responsavel: {
+  nomeResponsavel: {
     type: String,
-    uppercase: true
+    uppercase: true,
+    required: true
   },
   subdominio: {
     type: String,
     required: true,
     unique: true
+  },
+  contaConfirmada: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 })
 

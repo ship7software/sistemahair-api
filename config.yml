@@ -4,8 +4,25 @@ default:
   mongo:
     url: mongodb://root:1234@ds131621.mlab.com:31621/sistemahair-dev
   secret: hairisthesecret
+  email:
+    confirmacao:
+      from:
+        email: confirmacao@sistemahair.com.br
+        name: Sistema HAIR
+      subject: Confirme sua conta no Sistema HAIR
+      template: emailConfirmacaoConta.html
+    mailgun:
+      key: key-d4ef173e6a58378100129c550c037101
+      domain: sistemahair.com.br
+      from: Sistema HAIR<naoresponda@sistemahair.com.br>
+    sendinblue:
+      key: v3EOzh2w8q5CkYtN
+      url: https://api.sendinblue.com/v2.0
+  frontend:
+    url: http://localhost:8080
 development:
-
+  frontend:
+    url: https://agendamento-frontend-dev.mybluemix.net
 stage:
 
 test:
