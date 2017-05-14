@@ -25,6 +25,7 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(morgan('tiny', {
   skip: function() { return process.env.NODE_ENV == 'test' }
 }))
+app.use(require('./tenant'))
 app.use((req, res, next) => {
   if(req.url.substring(1, 8) !== 'publico' && req.url.indexOf('/auth') === -1 && req.url !== '/') {
     var token = req.headers['authorization']
