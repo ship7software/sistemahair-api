@@ -15,14 +15,15 @@ const gerarToken = (usuario, secret, cb) => {
 UsuarioController.prototype.auth = (req, res, next) => {
     let filter = { login: req.body.login }
     let populate = { path: 'empresaId' }
+    let tenant = req.app.get('tenant')
 
-    if(req.hostname == 'app') {
+    if(tenant == 'app') {
         populate.match = { $or: [
-            { subdominio: req.hostname },
+            { subdominio: tenant },
             { email: req.body.login }
         ]}
     } else {
-        populate.match = { subdominio: req.hostname }
+        populate.match = { subdominio: tenant }
     }
 
     usuarioFacade.findOne(filter, populate)
