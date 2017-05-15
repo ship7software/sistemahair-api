@@ -69,11 +69,6 @@ const empresaSchema = new Schema({
     uppercase: true,
     required: true
   },
-  subdominio: {
-    type: String,
-    required: true,
-    unique: true
-  },
   contaConfirmada: {
     type: Boolean,
     required: true,

@@ -9,7 +9,6 @@ describe('Empresa', () => {
   let bearerToken = null
   let usuarioInserido = null
   let empresa1 = {
-    "subdominio": "empresa1",
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "telefone": "(31) 9999-9991",
@@ -19,7 +18,6 @@ describe('Empresa', () => {
     "nomeResponsavel": "Hermógenes Ferreira"
   }
   let empresaUnicidade = {
-    "subdominio": "empresa1",
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "telefone": "(31) 9999-9991",
@@ -29,7 +27,6 @@ describe('Empresa', () => {
     "nomeResponsavel": "Hermógenes Ferreira"
   }
   let empresaAtualizacao = {
-    "subdominio": "empresa1",
     "cidade": "Montes Claros",
     "estado": "MG",
     "telefone": "(31) 9999-9991",
@@ -38,13 +35,11 @@ describe('Empresa', () => {
     "nomeResponsavel": "Hermógenes Ferreira"
   }  
   let empresaFaltaDados = {
-    "subdominio": "empresa1",
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "telefone": "(31) 9999-9991"
   }
   let empresaFaltaSenha = {
-    "subdominio": "empresaFaltaSenha",
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "telefone": "(31) 9999-9990",

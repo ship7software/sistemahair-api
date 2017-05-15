@@ -3,10 +3,6 @@ const crypto = require('./../../lib/crypto')
 const Schema   = mongoose.Schema
 
 const usuarioSchema = new Schema({
-  marca: {
-    type: String,
-    required: true
-  },  
   login: {
     type: String,
     required: true
@@ -29,7 +25,6 @@ const usuarioSchema = new Schema({
 })
 
 usuarioSchema.index({empresaId: 1, login: 1}, {unique: true})
-usuarioSchema.index({marca: 1, login: 1}, {unique: true})
 
 usuarioSchema.pre('save', function(next){
   var usuario = this

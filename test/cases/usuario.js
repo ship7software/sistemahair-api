@@ -11,8 +11,7 @@ describe('Usuario', () => {
   let usuarioInserido = null
   let usuario = {
         login: 'hermogenes',
-        password: 'senha',
-        marca: 'localhost'
+        password: 'senha'
       }
   let usuarioUnicidade = {
         login: 'local.superhair@mailinator.com',
@@ -23,8 +22,7 @@ describe('Usuario', () => {
       }            
   let usuarioAtualizacao = {
         login: 'hermogenes',
-        password: 'senha1',
-        marca: 'localhost'
+        password: 'senha1'
       }
   before('Dado que eu estou logado com um usuário válido', (done) => {
       chai.request(server).post('/usuario/auth').send({

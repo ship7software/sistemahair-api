@@ -14,16 +14,6 @@ const gerarToken = (res, usuario, secret) => {
 UsuarioController.prototype.auth = (req, res, next) => {
     let filter = { login: req.body.login }
     let populate = { path: 'empresaId' }
-    let tenant = req.app.get('tenant')
-
-    if(tenant == 'app') {
-        populate.match = { $or: [
-            { subdominio: tenant },
-            { email: req.body.login }
-        ]}
-    } else {
-        populate.match = { subdominio: tenant }
-    }
 
     usuarioFacade.findOne(filter, populate)
     .then(usuario => {

@@ -35,7 +35,6 @@ EmpresaController.prototype.criar = (req, res, next) => {
             login: empresa.email,
             password: req.body.password,
             nome: empresa.nomeResponsavel,
-            marca: empresa.subdominio,
             empresaId: mongoose.Types.ObjectId(empresa._id)
         }
 
