@@ -79,6 +79,7 @@ app.use('/', routes)
 
 app.set('config', config)
 app.set('superSecret', config.secret)
+app.set('secretConfirmacao', config.secretConfirmacao)
 
 app.use((err, req, res, next) => {
   if(err.errors){

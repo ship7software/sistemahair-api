@@ -4,6 +4,7 @@ default:
   mongo:
     url: mongodb://root:1234@ds131621.mlab.com:31621/sistemahair-dev
   secret: hairisthesecret
+  secretConfirmacao: hairconfirmsecret
   email:
     confirmacao:
       from:

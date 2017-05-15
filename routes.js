@@ -67,5 +67,7 @@ router.route('/publico/estado/:uf').get((req, res, next) => {
 */
 
 router.route('/publico/empresa/criar').post((...args) => empresaController.criar(...args))
+router.route('/publico/empresa/confirmar').get((...args) => empresaController.confirmar(...args))
+router.route('/publico/empresa/confirmar/reenviar').get((...args) => empresaController.reenviarConfirmacao(...args))
 
 module.exports = router
