@@ -8,6 +8,10 @@ module.exports = (req, res, next) => {
     tenant = req.headers['x-brand']
   }
 
+  if(substitute[tenant]) {
+    tenant = substitute[tenant]
+  }
+
   req.app.set('tenant', tenant)
   res.setHeader('x-brand', tenant)
   next()
