@@ -56,7 +56,10 @@ EmpresaController.prototype.criar = (req, res, next) => {
 EmpresaController.prototype.reenviarConfirmacao = (req, res, next) => {
     empresaFacade.findOne({ email: req.query.email }).then((empresa) => {
         if(empresa) {
-            res.status(200).json(empresa)
+            let token = enviarEmailConfirmacao(req, empresa)
+            let retorno = Object.assign({}, empresa._doc, { tokenConfirmacao: token })
+            
+            res.status(200).json(retorno)
         } else {
             res.status(404).json({ mensagem: 'Email não encontrado'})
         }

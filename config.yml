@@ -23,7 +23,7 @@ default:
     url: http://localhost:8080
 development:
   frontend:
-    url: https://agendamento-frontend-dev.mybluemix.net
+    url: https://sistemahair-frontend-dev.mybluemix.net
 stage:
 
 test:

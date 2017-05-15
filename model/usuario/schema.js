@@ -35,6 +35,7 @@ usuarioSchema.pre('save', function(next){
 })
 
 usuarioSchema.methods.verificarSenha = function(passToCheck) {
+  console.log(crypto.decrypt(this.password))
   return crypto.decrypt(this.password) == passToCheck
 }
 
