@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
+const autopopulate = require('mongoose-autopopulate')
+
 const Schema   = mongoose.Schema
 
 const ProdutoPacote = new Schema({
   produtoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Produto',
-    required: true
+    required: true,
+    autopopulate: true
   },
   quantidade: {
     type: Number,
@@ -18,7 +21,8 @@ const ServicoPacote = new Schema({
   servicoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Servico',
-    required: true
+    required: true,
+    autopopulate: true
   },
   quantidade: {
     type: Number,
@@ -52,12 +56,20 @@ const pacoteSchema = new Schema({
   empresaId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Empresa',
-    required: true
+    required: true,
+    autopopulate: true
   },
+  ativo: {
+    type: Boolean,
+    required: true,
+    default: true
+  },  
   preco: {
     type: Number
   }
 }, { collection: 'pacotes' })
+
+pacoteSchema.plugin(autopopulate)
 
 pacoteSchema.index({empresaId: 1, descricao: 1}, {unique: true})
 
