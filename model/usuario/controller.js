@@ -36,6 +36,31 @@ UsuarioController.prototype.auth = (req, res, next) => {
     .catch(err => next(err))    
 }
 
+UsuarioController.prototype.trocarSenha = (req, res, next) => {
+    let filter = { login: req.body.login }
+    let populate = { path: 'empresaId' }
+
+    usuarioFacade.findOne(filter, populate)
+    .then(usuario => {
+        if(!usuario || !usuario.empresaId){
+            res.status(422).json({ errorCode: 'INVALID_USER' })
+            return
+        }
+        
+        if(!usuario.verificarSenha(req.body.password)) {
+            res.status(422).json({ errorCode: 'INVALID_USER' })
+            return
+        }
+        
+        if(!req.body.novaSenha || !req.body.confirmacaoSenha || req.body.novaSenha !== req.body.confirmacaoSenha) {
+            res.status(422).json({ errorCode: 'INVALID_USER' })
+            return
+        }        
+        gerarToken(res, usuario, req.app.get('superSecret'))
+    })
+    .catch(err => next(err))    
+}
+
 UsuarioController.prototype.loginAutomatico = gerarToken
 
 module.exports = new UsuarioController(usuarioFacade)

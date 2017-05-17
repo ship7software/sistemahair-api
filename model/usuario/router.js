@@ -14,4 +14,7 @@ router.route('/:id')
   .get((...args) => controller.findById(...args))
   .delete((...args) => controller.remove(...args))
 
+router.route('/trocarSenha')
+  .post((...args) => controller.trocarSenha(...args))  
+
 module.exports = router
