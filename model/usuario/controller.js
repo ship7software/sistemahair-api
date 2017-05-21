@@ -55,8 +55,11 @@ UsuarioController.prototype.trocarSenha = (req, res, next) => {
         if(!req.body.novaSenha || !req.body.confirmacaoSenha || req.body.novaSenha !== req.body.confirmacaoSenha) {
             res.status(422).json({ errorCode: 'INVALID_USER' })
             return
-        }        
-        gerarToken(res, usuario, req.app.get('superSecret'))
+        }
+
+        usuarioFacade.update({ _id: usuario._id }, { password: require('./../../lib/crypto').encrypt(req.body.novaSenha) }).then((u2) => {
+            gerarToken(res, usuario, req.app.get('superSecret'))
+        }).catch((err) => next(err))
     })
     .catch(err => next(err))    
 }

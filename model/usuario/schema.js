@@ -27,6 +27,7 @@ const usuarioSchema = new Schema({
 usuarioSchema.index({empresaId: 1, login: 1}, {unique: true})
 
 usuarioSchema.pre('save', function(next){
+  console.log(this)
   var usuario = this
   if (!usuario.isModified('password')) return next()
 
@@ -35,7 +36,6 @@ usuarioSchema.pre('save', function(next){
 })
 
 usuarioSchema.methods.verificarSenha = function(passToCheck) {
-  console.log(crypto.decrypt(this.password))
   return crypto.decrypt(this.password) == passToCheck
 }
 
