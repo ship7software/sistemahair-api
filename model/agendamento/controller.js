@@ -1,3 +1,5 @@
+let mongoose = require('mongoose')
+const ObjectId = mongoose.Types.ObjectId
 const Controller = require('../../lib/controller')
 const agendamentoFacade  = require('./facade')
 const profissionalFacade = require('./../profissional/facade')
