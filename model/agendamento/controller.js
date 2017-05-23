@@ -6,14 +6,19 @@ const _ = require('lodash')
 class AgendamentoController extends Controller {}
 
 AgendamentoController.prototype.montar = function(req, res, next) {
+  let filtroProfissionais = { empresaId: new ObjectId(req.usuario.empresaId._id), ativo: true }
   let retorno = []
   let data = new Date(req.params.data)
   let proximo = new Date(data.valueOf())
   proximo.setDate(proximo.getDate() + 1)
 
-  let filtroAgendas = { ativo: true, data: { $gte: data, $lt: proximo } }
+  let filtroAgendas = { 
+    empresaId: new ObjectId(req.usuario.empresaId._id), 
+    ativo: true, 
+    data: { $gte: data, $lt: proximo }
+  }
 
-  profissionalFacade.findWithPagination({ ativo: true }, null, { nome: 1 }).then((profissionais) => {
+  profissionalFacade.findWithPagination(filtroProfissionais, null, { nome: 1 }).then((profissionais) => {
     agendamentoFacade.findWithPagination(filtroAgendas, null, { horaInicio: 1 }).then((eventos) => {
       _(profissionais).forEach((profissional) => {
         retorno.push({
