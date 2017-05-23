@@ -1,29 +1,37 @@
 const mongoose = require('mongoose')
 const Schema   = mongoose.Schema
 const moment   = require('moment')
+const autopopulate = require('mongoose-autopopulate')
 
 const agendamentoSchema = new Schema({
   clienteId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Cliente',
-    required: true
+    required: true,
+    autopopulate: true
   },
   profissionalId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Profissional',
-    required: true
+    required: true,
+    autopopulate: true
   },  
   servicoId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Servico',
-    required: true
+    required: true,
+    autopopulate: true
   },
   data: {
     type: Date,
     required: true,
     default: Date.now
   },
-  hora: {
+  horaInicio: {
+    type: String,
+    required: true
+  },
+  horaFim: {
     type: String,
     required: true
   },
@@ -47,9 +55,9 @@ const agendamentoSchema = new Schema({
 })
 
 agendamentoSchema.virtual('dataHora').get(function () {
-  return moment(moment(this.data).format("YYYY-MM-DD ") + this.hora)
+  return moment(moment(this.data).format("YYYY-MM-DD ") + this.horaInicio)
 })
 
-agendamentoSchema.index({empresaId: 1, nome: 1}, {unique: true})
+agendamentoSchema.plugin(autopopulate)
 
 module.exports = mongoose.model('Agendamento', agendamentoSchema)

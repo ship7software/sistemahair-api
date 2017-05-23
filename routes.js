@@ -8,7 +8,7 @@ const empresa  = require('./model/empresa/router')
 const conta  = require('./model/conta/router')
 const categoria  = require('./model/categoria/router')
 const formaPagamento  = require('./model/formaPagamento/router')
-
+const agendamento = require('./model/agendamento/router')
 const produto  = require('./model/produto/router')
 const servico  = require('./model/servico/router')
 const pacote  = require('./model/pacote/router')
@@ -39,6 +39,7 @@ router.use('/pessoa', pessoa)
 router.use('/cliente', cliente)
 router.use('/fornecedor', fornecedor)
 router.use('/profissional', profissional)
+router.use('/agendamento', agendamento)
 
 router.route('/publico/cep/:cep').get((req, res, next) => {
   cep(req.params.cep).then((ret) => {
