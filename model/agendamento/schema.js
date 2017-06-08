@@ -16,8 +16,8 @@ const agendamentoSchema = new Schema({
     required: true,
     autopopulate: true
   },  
-  servicoId: {
-    type: mongoose.Schema.Types.ObjectId,
+  servicos: {
+    type: [mongoose.Schema.Types.ObjectId],
     ref: 'Servico',
     required: true,
     autopopulate: true
