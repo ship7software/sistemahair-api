@@ -40,6 +40,11 @@ const agendamentoSchema = new Schema({
     required: true,
     default: true
   },
+  comandaId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comanda',
+    autopopulate: true
+  },
   empresaId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Empresa',

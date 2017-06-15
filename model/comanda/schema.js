@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const autopopulate = require('mongoose-autopopulate')
+const moment = require('moment')
+const currencyFormatter = require('currency-formatter');
 
 const Schema   = mongoose.Schema
 
@@ -40,17 +42,7 @@ const ServicoComanda = new Schema({
     required: true,
     autopopulate: true
   },
-  quantidade: {
-    type: Number,
-    required: true,
-    min: 1
-  },
-  precoUnitario: {
-    type: Number,
-    required: true,
-    default: 0
-  },
-  valorItem: {
+  preco: {
     type: Number,
     required: true,
     default: 0
@@ -60,7 +52,7 @@ const ServicoComanda = new Schema({
 const comandaSchema = new Schema({
   clienteId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Servico',
+    ref: 'Pessoa',
     required: true,
     autopopulate: true
   },
@@ -101,15 +93,38 @@ const comandaSchema = new Schema({
     required: true,
     autopopulate: true
   },
-  ativo: {
-    type: Boolean,
-    required: true,
-    default: true
+  status: {
+    type: Number,
+    default: 0
   }
-}, { collection: 'comandas' })
+}, {   
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
+  collection: 'comandas' 
+})
 
 comandaSchema.plugin(autopopulate)
 
-comandaSchema.index({empresaId: 1, descricao: 1}, {unique: true})
+comandaSchema.virtual('descricaoStatus').get(function() {
+  const status = ['Aberto', 'Faturado', 'Cancelado', 'Faturamento Pendente']
+
+  return status[this.status]
+})
+
+comandaSchema.virtual('nomeCliente').get(function() {
+  return (this.clienteId || {}).nome
+})
+
+comandaSchema.virtual('dataAberturaFormatada').get(function() {
+  return moment(this.dataAbertura).format('DD/MM/YYYY HH:mm')
+})
+
+comandaSchema.virtual('servicosConcatenados').get(function() {
+  return (this.servicos || []).join(', ')
+})
+
+comandaSchema.virtual('precoFinalFormatado').get(function() {
+  return currencyFormatter.format(this.precoFinal, { code: 'BRL', locale: 'pt-BR' })
+})
 
 module.exports = mongoose.model('Comanda', comandaSchema)

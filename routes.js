@@ -16,6 +16,7 @@ const pessoa  = require('./model/pessoa/router')
 const cliente  = require('./model/cliente/router')
 const fornecedor  = require('./model/fornecedor/router')
 const profissional  = require('./model/profissional/router')
+const comanda  = require('./model/comanda/router')
 
 const empresaController = require('./model/empresa/controller')
 
@@ -40,17 +41,17 @@ router.use('/cliente', cliente)
 router.use('/fornecedor', fornecedor)
 router.use('/profissional', profissional)
 router.use('/agendamento', agendamento)
+router.use('/comanda', comanda)
 
-router.route('/publico/cep/:cep').get((req, res, next) => {
+router.route('/publico/cep/:cep').get((req, res) => {
   cep(req.params.cep).then((ret) => {
     res.status(200).json(ret)
   }).catch(err => res.status(404).json(err))
 })
 
+/*
 const requestify = require('requestify')
 const _ = require('lodash')
-
-/*
 
 router.route('/publico/estado/:uf').get((req, res, next) => {
   requestify.get('http://educacao.dadosabertosbr.com/api/cidades/' + req.params.uf.toLowerCase()).then((ret) => {
